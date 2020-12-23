@@ -9,13 +9,11 @@
     <h1>Your code is:</h1>
     <div id="code"></div>
     <script>
-      var url = window.location;
-      var queryString = url.search;
-      console.log("queryString", queryString);
+      var queryString = window.location.search;
 
       var params = new URLSearchParams(queryString);
       var q = params.get("q");
-      console.log("q", q);
+
       var code = document.getElementById("code");
       code.textContent = q;
     </script>
