@@ -21,10 +21,10 @@
     var codeInput = document.getElementById("code-input");
     var button = document.getElementById("code-button");
     button.addEventListener("click", function () {
-      window.location.href = window.location.pathname.replace(
-        "index.html",
-        "code.html?q=" + codeInput.value
-      );
+      var a = document.createElement("a");
+      a.setAttribute("href", "code.html?q=" + codeInput.value);
+      a.click();
+      document.removeChild(a);
     });
   </script>
 </html>
