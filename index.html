@@ -7,6 +7,24 @@
   </head>
   <body>
     <h1>Landing Page</h1>
-    <a href="code.html">QR Code Link</a>
+    <div>
+      <a href="code.html">QR Code Link</a>
+    </div>
+    <br />
+    <div>
+      <label for="code-input">Enter your code.</label>
+      <input type="text" id="code-input" />
+      <button id="code-button">Go To URL with Code as a Parameter</button>
+    </div>
   </body>
+  <script>
+    var codeInput = document.getElementById("code-input");
+    var button = document.getElementById("code-button");
+    button.addEventListener("click", function () {
+      window.location.href = window.location.pathname.replace(
+        "index.html",
+        "code.html?q=" + codeInput.value
+      );
+    });
+  </script>
 </html>
